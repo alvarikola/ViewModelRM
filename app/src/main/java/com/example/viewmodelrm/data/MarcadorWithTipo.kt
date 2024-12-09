@@ -10,5 +10,5 @@ data class MarcadorWithTipo(
         parentColumn = "idTipoMarcadorOwner",
         entityColumn = "idTipoMarcador"
     )
-    val tiposMarcadores: Flow<List<TipoMarcador>>
+    val tiposMarcadores: List<TipoMarcador>
 )
