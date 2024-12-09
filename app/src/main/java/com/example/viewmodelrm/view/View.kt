@@ -87,7 +87,7 @@ fun MyMapView(modifier: Modifier = Modifier, viewModel: MarcadorViewModel) {
         marcadoresWithTipo.forEach { marcadorWithTipo ->
             // Para cada marcador, usamos sus coordenadas y tipo
             val marcador = marcadorWithTipo.marcador
-            val tipo = marcadorWithTipo.tiposMarcadores
+            val tipo = marcadorWithTipo.tiposMarcadores[0].tituloTipoMarcador
 
             val markerState = rememberMarkerState(
                 geoPoint = GeoPoint(marcador.coordenadaX, marcador.coordenadaY)
@@ -96,7 +96,7 @@ fun MyMapView(modifier: Modifier = Modifier, viewModel: MarcadorViewModel) {
             Marker(
                 state = markerState,
                 title = marcador.tituloMarcador, // add title
-                snippet = tipo.toString() // add snippet
+                snippet = tipo // add snippet
             ) {
 
                 // create info window node
