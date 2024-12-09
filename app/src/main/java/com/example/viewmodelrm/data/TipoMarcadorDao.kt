@@ -3,6 +3,7 @@ package com.example.viewmodelrm.data
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import kotlinx.coroutines.flow.Flow
 
 
 @Dao
@@ -13,6 +14,6 @@ interface TipoMarcadorDao {
 
 
     @Query("SELECT * FROM TiposMarcadores")
-    suspend fun getAllTipos(): List<TipoMarcador>
+    suspend fun getAllTipos(): Flow<List<TipoMarcador>>
 
 }

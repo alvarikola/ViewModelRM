@@ -2,6 +2,7 @@ package com.example.viewmodelrm.data
 
 import androidx.room.Embedded
 import androidx.room.Relation
+import kotlinx.coroutines.flow.Flow
 
 data class MarcadorWithTipo(
     @Embedded val marcador: Marcador,
@@ -9,5 +10,5 @@ data class MarcadorWithTipo(
         parentColumn = "idTipoMarcadorOwner",
         entityColumn = "idTipoMarcador"
     )
-    val tiposMarcadores: List<TipoMarcador>
+    val tiposMarcadores: Flow<List<TipoMarcador>>
 )
