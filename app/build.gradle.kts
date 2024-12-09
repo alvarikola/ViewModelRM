@@ -54,9 +54,8 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7")
 
     //Mapas
-//    implementation(libs.osmdroid.android)
-//    implementation(libs.osm.android.compose)
-
+    implementation(libs.osmdroid.android)
+    implementation(libs.osm.android.compose)
 
 
     implementation(libs.androidx.core.ktx)
