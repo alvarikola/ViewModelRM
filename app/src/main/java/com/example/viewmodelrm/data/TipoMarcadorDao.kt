@@ -14,6 +14,6 @@ interface TipoMarcadorDao {
 
 
     @Query("SELECT * FROM TiposMarcadores")
-    suspend fun getAllTipos(): Flow<List<TipoMarcador>>
+    fun getAllTipos(): Flow<List<TipoMarcador>>
 
 }
