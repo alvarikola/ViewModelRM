@@ -10,7 +10,7 @@ import androidx.room.Query
 interface MarcadorDao {
 
     @Insert
-    suspend fun insertTarea(marcador: Marcador)
+    suspend fun insertMarcador(marcador: Marcador)
 
 
     @Query("SELECT * FROM MARCADORES")
