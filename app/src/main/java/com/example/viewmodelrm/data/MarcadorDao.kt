@@ -14,5 +14,5 @@ interface MarcadorDao {
 
 
     @Query("SELECT * FROM MARCADORES")
-    suspend fun getAllMarcadoresAndTipos(): Flow<List<MarcadorWithTipo>>
+    fun getAllMarcadoresAndTipos(): Flow<List<MarcadorWithTipo>>
 }
