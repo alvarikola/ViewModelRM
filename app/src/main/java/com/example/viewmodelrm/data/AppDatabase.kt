@@ -69,9 +69,11 @@ abstract class AppDatabase : RoomDatabase() {
                 Marcador(tituloMarcador = "Areafit Arrecife", coordenadaX = 28.965880963476955, coordenadaY = -13.553236950019679, idTipoMarcadorOwner = tiposFromDbUpdated[0].idTipoMarcador),
 
                 )
-
-            marcadores.forEach {
-                marcadorDao.insertMarcador(it)
+            val marcadoresFromDb = marcadorDao.getAllMarcadoresAndTipos().first()
+            if (marcadoresFromDb.isEmpty()) {
+                marcadores.forEach {
+                    marcadorDao.insertMarcador(it)
+                }
             }
         }
     }
