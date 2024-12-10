@@ -5,3 +5,5 @@
 - Se usa viewmodel para los marcadores
 - 12 marcadores mínimo (mostrarán al menos un título)
 - 4 tipos de marcadores mínimo
+## Rúbrica
+![image](https://github.com/user-attachments/assets/31e51d4c-edca-4212-a6b3-54be0eefe75c)
