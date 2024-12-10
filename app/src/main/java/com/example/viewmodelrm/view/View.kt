@@ -1,5 +1,6 @@
 package com.example.viewmodelrm.view
 
+import android.graphics.BitmapFactory
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -18,9 +19,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.content.ContextCompat
+import com.example.viewmodelrm.R
 import com.example.viewmodelrm.viewModel.MarcadorViewModel
 import com.utsman.osmandcompose.DefaultMapProperties
 import com.utsman.osmandcompose.Marker
@@ -99,6 +103,7 @@ fun MyMapView(modifier: Modifier = Modifier, viewModel: MarcadorViewModel) {
                 state = markerState,
                 title = marcador.tituloMarcador, // add title
                 snippet = tipo, // add snippet
+                icon = ContextCompat.getDrawable(LocalContext.current, R.drawable.icono_deporte)
             ) {
 
                 // create info window node
