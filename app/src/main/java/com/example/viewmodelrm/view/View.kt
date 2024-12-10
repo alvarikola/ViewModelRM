@@ -1,6 +1,7 @@
 package com.example.viewmodelrm.view
 
 import android.graphics.BitmapFactory
+import android.graphics.drawable.Drawable
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -94,7 +95,27 @@ fun MyMapView(modifier: Modifier = Modifier, viewModel: MarcadorViewModel) {
             // Para cada marcador, usamos sus coordenadas y tipo
             val marcador = marcadorWithTipo.marcador
             val tipo = marcadorWithTipo.tiposMarcadores[0].tituloTipoMarcador
+            var icono by remember { mutableStateOf(R.drawable.ic_launcher_background) }
 
+            when (marcadorWithTipo.tiposMarcadores[0].idTipoMarcador) {
+                0 -> icono = R.drawable.icono_deporte
+                1 -> icono = R.drawable.icono_educacion
+                2 -> icono = R.drawable.icono_viaje
+                3 -> icono = R.drawable.icono_viaje
+            }
+
+//            if (marcadorWithTipo.tiposMarcadores[0].idTipoMarcador == 0) {
+//                icono = ContextCompat.getDrawable(LocalContext.current, R.drawable.icono_deporte)
+//            }
+//            if (marcadorWithTipo.tiposMarcadores[0].idTipoMarcador == 1) {
+//                icono = ContextCompat.getDrawable(LocalContext.current, R.drawable.icono_deporte)
+//            }
+//            if (marcadorWithTipo.tiposMarcadores[0].idTipoMarcador == 2) {
+//                icono = ContextCompat.getDrawable(LocalContext.current, R.drawable.icono_viaje)
+//            }
+//            if (marcadorWithTipo.tiposMarcadores[0].idTipoMarcador == 3) {
+//                icono = ContextCompat.getDrawable(LocalContext.current, R.drawable.icono_cultura)
+//            }
             val markerState = rememberMarkerState(
                 geoPoint = GeoPoint(marcador.coordenadaX, marcador.coordenadaY)
             )
@@ -103,7 +124,7 @@ fun MyMapView(modifier: Modifier = Modifier, viewModel: MarcadorViewModel) {
                 state = markerState,
                 title = marcador.tituloMarcador, // add title
                 snippet = tipo, // add snippet
-                icon = ContextCompat.getDrawable(LocalContext.current, R.drawable.icono_deporte)
+                icon = ContextCompat.getDrawable(LocalContext.current, icono)
             ) {
 
                 // create info window node
