@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
@@ -17,6 +18,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.viewmodelrm.viewModel.MarcadorViewModel
@@ -96,20 +98,21 @@ fun MyMapView(modifier: Modifier = Modifier, viewModel: MarcadorViewModel) {
             Marker(
                 state = markerState,
                 title = marcador.tituloMarcador, // add title
-                snippet = tipo // add snippet
+                snippet = tipo, // add snippet
             ) {
 
                 // create info window node
                 Column(
                     modifier = Modifier
-                        .size(100.dp)
-                        .background(color = Color.Gray, shape = RoundedCornerShape(7.dp)),
+                        .size(150.dp)
+                        .background(color = Color.White, shape = RoundedCornerShape(7.dp))
+                        .padding(10.dp),
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     // setup content of info window
-                    Text(text = it.title) // Título del marcador
-                    Text(text = it.snippet, fontSize = 10.sp) // Snippet del marcador (Tipo)
+                    Text(text = it.title, fontWeight = FontWeight.Bold) // Título del marcador
+                    Text(text = it.snippet, fontSize = 12.sp) // Snippet del marcador (Tipo)
                 }
             }
         }
