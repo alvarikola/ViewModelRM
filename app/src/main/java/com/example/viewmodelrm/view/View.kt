@@ -95,27 +95,14 @@ fun MyMapView(modifier: Modifier = Modifier, viewModel: MarcadorViewModel) {
             // Para cada marcador, usamos sus coordenadas y tipo
             val marcador = marcadorWithTipo.marcador
             val tipo = marcadorWithTipo.tiposMarcadores[0].tituloTipoMarcador
-            var icono by remember { mutableStateOf(R.drawable.ic_launcher_background) }
+            var icono by remember { mutableStateOf(R.drawable.icono_cultura) }
 
             when (marcadorWithTipo.tiposMarcadores[0].idTipoMarcador) {
-                0 -> icono = R.drawable.icono_deporte
-                1 -> icono = R.drawable.icono_educacion
-                2 -> icono = R.drawable.icono_viaje
+                1 -> icono = R.drawable.icono_deporte
+                2 -> icono = R.drawable.icono_educacion
                 3 -> icono = R.drawable.icono_viaje
+                4 -> icono = R.drawable.icono_cultura
             }
-
-//            if (marcadorWithTipo.tiposMarcadores[0].idTipoMarcador == 0) {
-//                icono = ContextCompat.getDrawable(LocalContext.current, R.drawable.icono_deporte)
-//            }
-//            if (marcadorWithTipo.tiposMarcadores[0].idTipoMarcador == 1) {
-//                icono = ContextCompat.getDrawable(LocalContext.current, R.drawable.icono_deporte)
-//            }
-//            if (marcadorWithTipo.tiposMarcadores[0].idTipoMarcador == 2) {
-//                icono = ContextCompat.getDrawable(LocalContext.current, R.drawable.icono_viaje)
-//            }
-//            if (marcadorWithTipo.tiposMarcadores[0].idTipoMarcador == 3) {
-//                icono = ContextCompat.getDrawable(LocalContext.current, R.drawable.icono_cultura)
-//            }
             val markerState = rememberMarkerState(
                 geoPoint = GeoPoint(marcador.coordenadaX, marcador.coordenadaY)
             )
