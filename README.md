@@ -7,3 +7,6 @@
 - 4 tipos de marcadores mínimo
 ## Rúbrica
 ![image](https://github.com/user-attachments/assets/31e51d4c-edca-4212-a6b3-54be0eefe75c)
+
+## Vista aplicación
+![image](https://github.com/user-attachments/assets/b1bfcd29-2bc7-49b9-bdab-ba605775cae1)
